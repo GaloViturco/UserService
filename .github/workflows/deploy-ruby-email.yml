@@ -24,6 +24,7 @@ jobs:
         docker build -t galo12/change_password ./change_password
         docker build -t galo12/change_user ./change_user
         docker build -t galo12/delete-account ./delete_account
+        docker build -t galo12/time ./date-time-service
 
 
     - name: Push images to Docker Hub
@@ -32,6 +33,7 @@ jobs:
         docker push galo12/change_password
         docker push galo12/change_user
         docker push galo12/delete-account
+        docker push galo12/time
 
     - name: Deploy services to EC2
       uses: appleboy/ssh-action@v1.0.0
@@ -40,20 +42,24 @@ jobs:
         username: ec2-user
         key: ${{ secrets.EC2_PEM_KEY }}
         script: |
-          # Detener y eliminar contenedores anteriores si existen
+          # Docker
           docker stop change_password || true
           docker rm change_password || true
           docker stop change_user || true
           docker rm change_user || true
           docker stop delete-account || true
           docker rm delete-account || true
+          docker stop time || true
+          docker rm time || true
 
-          # Descargar las últimas imágenes de Docker
+          # D
           docker pull galo12/change_password
           docker pull galo12/change_user
           docker pull galo12/delete-account
+          docker pull galo12/time
 
-          # Ejecutar los nuevos contenedores con las imágenes más recientes
+          # E
           docker run -d --name change_password -p 4567:4567 --restart unless-stopped galo12/change_password
           docker run -d --name change_user -p 4568:4568 --restart unless-stopped galo12/change_user
           docker run -d --name delete-account -p 4569:4569 --restart unless-stopped galo12/delete-account
+          docker run -d --name time -p 5001:5001 --restart unless-stopped galo12/time
