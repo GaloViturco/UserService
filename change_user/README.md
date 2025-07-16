@@ -4,10 +4,10 @@
 This microservice is part of the **Email Service** domain and is responsible for changing a user's email address. It provides a service to securely change the email of a user, ensuring that the change is processed correctly and efficiently.
 
 ## Repository Link 📁
-- [GitHub Repository](https://github.com/Loony213/email-service)
+- [GitHub Repository](https://github.com/GaloViturco/UserService)
 
 ## Docker Image 🐳
-- **Docker Image:** `kamartinez/change_user`
+- **Docker Image:** `galo12/change_user`
 
 ## Purpose 🎯
 The **Change User** microservice allows users to update their email address. It ensures that the provided email is valid and that the change is processed securely, interacting with the database to reflect the updated information.
@@ -61,7 +61,7 @@ change_user/
 ## How to Deploy ⚙️
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Loony213/email-service.git
+   git clone https://github.com/GaloViturco/UserService
    ```
 
 2. **Install Dependencies:**
@@ -79,11 +79,11 @@ change_user/
 4. **Docker Deployment:**
    - Build the Docker image:
      ```bash
-     docker build -t kamartinez/change_user .
+     docker build -t galo12/change_user .
      ```
    - Run the container:
      ```bash
-     docker run -p 5000:5000 kamartinez/change_user
+     docker run -p 5000:5000 galo12/change_user
      ```
 
 5. **Access the Service:**

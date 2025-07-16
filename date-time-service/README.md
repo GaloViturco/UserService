@@ -4,10 +4,10 @@
 This microservice is part of the **Logs Service** domain and is responsible for providing the current server date and time. It allows clients to retrieve the exact time from the server whenever needed.
 
 ## Repository Link 📁
-- [GitHub Repository](https://github.com/Loony213/Logs-Service)
+- [GitHub Repository](https://github.com/GaloViturco/UserService)
 
 ## Docker Image 🐳
-- **Docker Image:** `kamartinez/time`
+- **Docker Image:** `galo12/time`
 
 ## Purpose 🎯
 The **Date-Time Service** microservice provides the current date and time from the server. Clients can make a request to get the current time whenever they need it, ensuring they are getting the time from the server's environment.
@@ -49,7 +49,7 @@ date-time-service/
 ## How to Deploy ⚙️
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Loony213/Logs-Service.git
+   git clone https://github.com/GaloViturco/UserService
    ```
 
 2. **Install Dependencies:**
@@ -67,11 +67,11 @@ date-time-service/
 4. **Docker Deployment:**
    - Build the Docker image for the Date-Time service:
      ```bash
-     docker build -t kamartinez/time .
+     docker build -t galo12/time .
      ```
    - Run the container:
      ```bash
-     docker run -p 5000:5000 kamartinez/time
+     docker run -p 5000:5000 galo12/time
      ```
 
 5. **Access the Service:**
